@@ -26,6 +26,7 @@ public class MiniCaptstone extends JFrame
     private JLabel secondLabel;
     private JLabel hourLabel;
     private JLabel distanceLabel;
+    private JLabel infoLabel;
     
     private String[] description = { "Miles", "Kilometers" };
     private JComboBox <String> distanceSystem;
@@ -42,9 +43,23 @@ public class MiniCaptstone extends JFrame
         this.totalHours = new JTextField(15);
         this.calculate = new JButton ( "Calculate Split" );
         this.distanceSystem = new JComboBox <String>();
+        this.minuteLabel = new JLabel("Minutes");
+        this.secondLabel = new JLabel("Seconds");
+        this.hourLabel = new JLabel("Hours");
+        this.distanceLabel = new JLabel("Distance");
+        this.infoLabel = new JLabel("Please place a 0 in any black location");
+        
+        this.panel.add(infoLabel);
+        this.panel.add(hourLabel);
+        this.panel.add(minuteLabel);
+        this.panel.add(secondLabel);
+        this.panel.add(distanceLabel);
         
         calculate.setLocation(100,50);
         this.panel.add(calculate);
+        
+        totalHours.setLocation(0,0);
+        this.panel.add(totalHours);
         
         totalMinutes.setLocation(100,200);
         this.panel.add(totalMinutes);
@@ -54,14 +69,7 @@ public class MiniCaptstone extends JFrame
         
         totalDistance.setLocation(90,40);
         this.panel.add(totalDistance);
-        
-        totalHours.setLocation(0,0);
-        this.panel.add(totalHours);
-        
-        
-        
-      
-        
+
         for (int i = 0; i < description.length;i++)
         {
            this.distanceSystem.addItem(description[i]);
